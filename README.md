@@ -27,9 +27,10 @@
 - **Carousel:** React Slick & Slick Carousel  
 
 ---
+## 🖼️ Screenshot
 ![Untitled (1) (1)](https://github.com/user-attachments/assets/148abee3-a2ea-4025-a2ff-804470c07a65)
 
-## 🖼️ Screenshot
+
 
 
 
@@ -39,10 +40,10 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/gembuild.git
+git clone https://github.com/Ali-dotcom98/InterfaceCraft.git
 
 # Navigate into the project folder
-cd gembuild
+cd InterfaceCraft
 
 # Install dependencies
 npm install
