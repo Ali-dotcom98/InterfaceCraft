@@ -50,5 +50,5 @@ npm install
 
 # Start the development server
 npm run dev
- make changes according to given image
+```
 
