@@ -9,11 +9,15 @@ import ContactUs from './Components/ContactUs'
 import Aboutus1 from './Components/Aboutus1'
 import Footer from './Components/Footer/Footer'
 import {ThemeProvider} from "./ContextApi/ThemeContext"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import 'odometer/themes/odometer-theme-default.css';
 
 const App = () => {
   return (
     <>
-      <ThemeProvider>
+      <div className='overflow-hidden'>
+        <ThemeProvider>
         <NavBar/>
         <Home/>
         <Services/>
@@ -24,7 +28,7 @@ const App = () => {
         <Aboutus1/>
         <Footer/>
       </ThemeProvider>
-       
+      </div>
     </>
   )
 }
