@@ -54,16 +54,15 @@ const Home = () => {
     >
       <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-10 py-6 text-center md:text-left  md:-translate-y-16 md:translate-x-3 md:space-y-16">
-          <h1 className="font-zentry text-3xl sm:text-4xl lg:text-5xl font-bold translate-y-10">
+          <h1 className="font-charmonman text-3xl sm:text-4xl lg:text-5xl font-bold translate-y-10">
             Explore the World, Your way with{" "}
             <span className="text-primary-pr">Travins</span>
           </h1>
-          <p className="text-text-muted font-medium max-w-md mx-auto md:mx-0 ">
-            Book your next adventure with ease. Affordable, reliable, and
-            unforgettable travel experiences await.
+          <p className="text-text-muted font-medium  mx-auto md:mx-0 w-full  ">
+            Book your next adventure with ease. Affordable, reliable, and unforgettable travel experiences await.
           </p>
           <div ref={box} className="flex justify-center md:justify-start">
-            <img src={air} alt="airplane" className="w-3/5 md:w-4/5" />
+            <img src={air} alt="airplane" className="w-3/5 md:w-5/6" />
           </div>
         </div>
 
