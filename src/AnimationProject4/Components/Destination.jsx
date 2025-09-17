@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { popularDestinations } from "../data";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import { useTheme } from "../ContextApi/ThemeContext";
 
 const Destination = () => {
@@ -18,106 +18,107 @@ const Destination = () => {
     arrows: true,
     draggable: true,
     swipe: true,
+    responsive: [
+      { breakpoint: 1280, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
   };
 
-  // Dynamic classes based on theme
   const sectionBg = theme === "dark" ? "bg-black text-white" : "bg-white text-black";
   const mutedText = theme === "dark" ? "text-gray-400" : "text-gray-600";
-  const cardOverlay = theme === "dark" ? "bg-black opacity-30" : "bg-white opacity-30";
+  const cardOverlay = theme === "dark" ? "bg-black opacity-30" : "bg-white opacity-10";
   const bottomOverlay = theme === "dark" ? "bg-black bg-opacity-85" : "bg-white bg-opacity-80";
+  const ratingBg = theme === "dark" ? "bg-black" : "bg-white text-black";
 
   return (
-    <section id="destination" className={`h-fit font-poppins py-20 space-y-6 ${sectionBg}`}>
-      {/* Header */}
-      <div className="flex flex-col items-center justify-center gap-3">
-        <h1 className="text-2xl font-bold">Where Will</h1>
-        <h2 className="text-3xl font-medium text-primary-pr">You GO Next</h2>
-        <p className={`font-medium ${mutedText}`}>
+    <section id="destination" className={`h-fit font-poppins py-14 space-y-6 ${sectionBg}`}>
+      <div className="flex flex-col items-center justify-center gap-3 text-center px-4">
+        <h1 className="text-2xl sm:text-3xl font-bold">Where Will</h1>
+        <h2 className="text-3xl sm:text-4xl font-medium text-primary-pr">You Go Next</h2>
+        <p className={`text-sm sm:text-base font-medium ${mutedText}`}>
           Discover some of the most sought-after destinations around the world.
         </p>
-        {/* Theme Toggle Button */}
         <button
           onClick={ToggleTheme}
-          className="mt-4 px-4 py-2 rounded-lg bg-primary-pr text-white hover:opacity-90"
+          className="mt-4 px-5 py-2 rounded-lg bg-primary-pr text-white hover:opacity-90 transition"
         >
           Switch to {theme === "dark" ? "Light" : "Dark"} Mode
         </button>
       </div>
 
-      {/* Slider */}
-      <div className="px-10">
-        <div className="overflow-x-hidden">
-          <Slider {...settings}>
-            {popularDestinations.map((data, idx) => (
+      <div className="px-4 sm:px-6 lg:px-10">
+        <Slider {...settings}>
+          {popularDestinations.map((data, idx) => (
+            <div
+              key={idx}
+              className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-2xl overflow-hidden group"
+            >
+              <img
+                src={data.image}
+                className="w-full h-full object-cover rounded-2xl"
+                alt={data.title}
+              />
+              <div className={`absolute inset-0 rounded-2xl ${cardOverlay}`} />
               <div
-                key={idx}
-                className="relative w-full h-[70vh] rounded-2xl overflow-hidden group"
+                className={`absolute top-4 right-3 py-1 px-4 rounded-3xl text-sm font-semibold ${ratingBg} opacity-100 group-hover:opacity-0 transition`}
               >
-                <img
-                  src={data.image}
-                  className="w-full h-full object-cover rounded-2xl"
-                  alt={data.title}
-                />
-                <div className={`absolute inset-0 rounded-2xl ${cardOverlay}`} />
-                <div className="opacity-100 group-hover:opacity-0 absolute top-4 right-0 py-1 rounded-3xl px-4 mx-3 bg-black">
-                  {data.rating}
-                </div>
+                {data.rating}
+              </div>
 
-                {/* Hover Details */}
-                <div className="opacity-0 transition-all ease-in duration-200 group-hover:opacity-100 absolute top-10 w-full px-3">
-                  <div className="relative z-20 text-sm flex flex-col gap-3">
-                    {[
-                      { value: data.hotels_number, label: "Hotels" },
-                      { value: data.flights_number, label: "Flights" },
-                      { value: data.price, label: "Premium Service" },
-                    ].map((item, i) => (
-                      <div key={i} className="rounded-3xl relative text-white border">
-                        <div className="relative z-20 flex flex-row gap-2 px-5 py-2 items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="text-primary-pr"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                            <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
-                            <path d="M12 11h4" />
-                            <path d="M12 16h4" />
-                            <path d="M8 11h.01" />
-                            <path d="M8 16h.01" />
-                          </svg>
-                          <div className="flex flex-col">
-                            <h1>{item.value}</h1>
-                            <p>{item.label}</p>
-                          </div>
+              <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-10 w-full px-3">
+                <div className="relative z-20 text-xs sm:text-sm flex flex-col gap-3">
+                  {[
+                    { value: data.hotels_number, label: "Hotels" },
+                    { value: data.flights_number, label: "Flights" },
+                    { value: data.price, label: "Premium Service" },
+                  ].map((item, i) => (
+                    <div key={i} className="relative text-white border rounded-3xl">
+                      <div className="relative z-20 flex flex-row gap-2 px-4 py-2 items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className=""
+                        >
+                          <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                          <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+                          <path d="M12 11h4" />
+                          <path d="M12 16h4" />
+                          <path d="M8 11h.01" />
+                          <path d="M8 16h.01" />
+                        </svg>
+                        <div className="flex flex-col">
+                          <h1 className="font-semibold">{item.value}</h1>
+                          <p>{item.label}</p>
                         </div>
-                        <div className="absolute bg-black opacity-45 inset-0 rounded-3xl" />
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Overlay */}
-                <div className={`absolute bottom-0 z-10 h-[30%] w-full ${bottomOverlay}`}>
-                  <div className="relative flex flex-col w-full items-center justify-center pt-3">
-                    <h1 className="text-2xl font-bold">{data.country}</h1>
-                    <p className="text-center">{data.title}</p>
-                  </div>
+                      <div className="absolute bg-black opacity-45 inset-0 rounded-3xl" />
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </Slider>
-        </div>
+
+              <div className={`absolute bottom-0 z-10 h-[25%] w-full ${bottomOverlay}`}>
+                <div className="flex flex-col w-full items-center justify-center py-2 sm:pt-3 text-center">
+                  <h1 className="text-lg sm:text-2xl font-medium sm:font-bold">{data.country}</h1>
+                  <p className="text-sm sm:text-base">{data.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
 
-      {/* Button */}
-      <div className="flex flex-row items-center justify-center">
-        <button className="bg-primary-pr py-2 px-3 rounded-3xl">All Destination</button>
+      <div className="flex justify-center">
+        <button className="bg-primary-pr py-2 px-5 rounded-3xl text-white font-medium hover:opacity-90 transition">
+          All Destinations
+        </button>
       </div>
     </section>
   );

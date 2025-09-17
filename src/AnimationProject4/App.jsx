@@ -16,7 +16,7 @@ import 'odometer/themes/odometer-theme-default.css';
 const App = () => {
   return (
     <>
-      <div className='overflow-hidden'>
+      <div className='overflow-hidden '>
         <ThemeProvider>
         <NavBar/>
         <Home/>

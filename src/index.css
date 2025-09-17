@@ -42,3 +42,26 @@ body {}
     font-size: 24px;
     /* Adjust size if needed */
 }
+
+/* Prevent absolute-like behavior on small screens */
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-track {
+    display: flex !important;
+    align-items: stretch;
+}
+
+.slick-list {
+    overflow: hidden !important;
+}
+
+/* Fix slide shrinking issue on very small screens */
+@media (max-width: 768px) {
+    .slick-slide>div {
+        width: 100% !important;
+    }
+}

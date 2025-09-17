@@ -1,70 +1,69 @@
-import React from 'react'
-import watermark from '../../assets/bg-3.svg'
-import {footer} from "../../data"
-import {useTheme}from "../../ContextApi/ThemeContext"
+import React from "react";
+import watermark from "../../assets/bg-3.svg";
+import { footer } from "../../data";
+import { useTheme } from "../../ContextApi/ThemeContext";
+
 const Footer = () => {
-    const {theme , ToggleTheme} = useTheme()
+  const { theme } = useTheme();
+
   return (
-    <>
-        <div className={`relative h-[80vh] overflow-hidden font-poppins ${theme==="dark"?"bg-black text-white ": "text-black bg-white"}`}>
-            <div className='absolute w-full  opacity-15'>
-                <img src={watermark} className='w-full ' alt="" />
-            </div>
-           <div className=' flex flex-row items-center gap-10 translate-x-36 translate-y-10 py-20 '>
-                <div className='w-[20%]  space-y-4'> 
-                    <div className='text-3xl'>
-                        <h1>Contact Us</h1>
-                    </div>
-                    <div>
-                        <h1>Email</h1>
-                        <p>alishah123458.as@gmail.com</p>
-                    </div>
-                    <div>
-                        <h1>Phone</h1>
-                        <p>+1234567890</p>
-                    </div>
-                    <div>
-                        <h1>Address</h1>
-                        <p>Xyz</p>
-                    </div>
-                </div>
-                <div className=''>
-                    <div className='grid grid-cols-3 gap-4'>
-                        {
-                            footer.map((data)=>(
-                                <div className='flex flex-col gap-4'>
-                                    <h1 className='text-xl font-medium'> {data.title}</h1>
-                                    <div className='flex flex-col gap-4'>
-                                        {
-                                            data.links.map((data)=>(
-                                                <div className=''>
-                                                    {
-                                                        <div className='flex flex-row gap-4 items-center'>
-                                                            <h1><data.icon/></h1>
-                                                            <p>{data.label}</p>
-                                                        </div>
+    <footer
+      className={`relative overflow-hidden font-poppins ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <img src={watermark} alt="Watermark" className="w-full h-full object-cover" />
+      </div>
 
-
-                                                    }
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
-                
-            </div>
-            <div className='w-full  py-3 absolute bottom-0 z-30'>
-                <div className='text-sm flex flex-row items-center justify-center'>
-                    Copyright Confix - All right reserved 
-                </div>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
+        <div className="space-y-4">
+          <h1 className="text-2xl font-bold">Contact Us</h1>
+          <div>
+            <h2 className="font-medium">Email</h2>
+            <p className="text-sm">alishah123458.as@gmail.com</p>
+          </div>
+          <div>
+            <h2 className="font-medium">Phone</h2>
+            <p className="text-sm">+1234567890</p>
+          </div>
+          <div>
+            <h2 className="font-medium">Address</h2>
+            <p className="text-sm">Xyz</p>
+          </div>
         </div>
-    </>
-  )
-}
 
-export default Footer
+        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {footer.map((group, idx) => (
+            <div key={idx} className="space-y-4">
+              <h1 className="text-xl font-medium">{group.title}</h1>
+              <div className="flex flex-col gap-3">
+                {group.links.map((link, linkIdx) => (
+                  <div
+                    key={linkIdx}
+                    className="flex items-center gap-3 hover:text-primary-pr transition-colors duration-200 cursor-pointer"
+                  >
+                    <link.icon className="w-5 h-5" />
+                    <p className="text-sm">{link.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className={`w-full py-3 border-t ${
+          theme === "dark" ? "border-gray-700" : "border-gray-200"
+        }`}
+      >
+        <p className="text-sm text-center">
+          © {new Date().getFullYear()} Confix - All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
