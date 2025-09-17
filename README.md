@@ -46,5 +46,5 @@ npm run dev
 ![Untitled (1) (1)](https://github.com/user-attachments/assets/148abee3-a2ea-4025-a2ff-804470c07a65)
 
 ## Live Preview
-[Open Live Preview](interface-craft.vercel.app)
+[Open Live Preview](https://interface-craft.vercel.app/)
 
