@@ -1,6 +1,6 @@
-# 🌍 Travins – Travel Booking Website
+# 🌍 InterfaceCraft – Travel Booking Website
 
-**Travins** is a modern and responsive travel booking website. Built using React 19, styled with Tailwind CSS, and optimized for performance with Vite, the site provides a smooth, interactive user experience. The platform is designed for users to book their next adventure, from flights to accommodations, with ease.
+**InterfaceCraft** is a modern and responsive travel booking website. Built using React 19, styled with Tailwind CSS, and optimized for performance with Vite, the site provides a smooth, interactive user experience. The platform is designed for users to book their next adventure, from flights to accommodations, with ease.
 
 
 ---
