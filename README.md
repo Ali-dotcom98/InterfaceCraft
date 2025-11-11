@@ -7,13 +7,13 @@
 
 ## 🚀 Features
 
-- ✈️ **Explore the World** – Book your next adventure with ease using Travins. 
-- ⭐ **Ratings & Reviews** – View 4.5-star ratings from over 1,210 satisfied users.
-- 🌍 **Global Destinations** – Find the best destinations worldwide.
-- 🏝️ **Vacation Planning** – Affordable, reliable, and unforgettable travel experiences await.
-- 🌐 **Interactive Design** – World map with interactive travel paths and destinations.
-- 🖼️ **Engaging Visuals** – Beautiful images showcasing stunning destinations.
-- 🌙 **Dark Mode** – Toggle between light and dark mode for an optimal viewing experience.
+- **Explore the World** – Book your next adventure with ease using Travins. 
+- **Ratings & Reviews** – View 4.5-star ratings from over 1,210 satisfied users.
+- **Global Destinations** – Find the best destinations worldwide.
+- **Vacation Planning** – Affordable, reliable, and unforgettable travel experiences await.
+- **Interactive Design** – World map with interactive travel paths and destinations.
+- **Engaging Visuals** – Beautiful images showcasing stunning destinations.
+- **Dark Mode** – Toggle between light and dark mode for an optimal viewing experience.
 ---
 
 ## 🛠️ Tech Stack
