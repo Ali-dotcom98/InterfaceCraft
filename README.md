@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 Features
+## 🌟 Features
 
 - **Explore the World** – Book your next adventure with ease using Travins. 
 - **Ratings & Reviews** – View 4.5-star ratings from over 1,210 satisfied users.
