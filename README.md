@@ -43,15 +43,7 @@ npm install
 # Start the development server
 npm run dev
 ```
----
-
-## 🖼️ Screenshot
-
 ![InterfaceCraft Screenshot](https://github.com/user-attachments/assets/148abee3-a2ea-4025-a2ff-804470c07a65)
 
----
-
-
-## Live Preview
-[Open Live Preview](https://interface-craft.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue)](https://interface-craft.vercel.app/)
 
